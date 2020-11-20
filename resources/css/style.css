@@ -13,7 +13,6 @@
 }
 
 *{
-    color: var(--color-gainsboro);
     font-family: Museo300;
 }
 input[type="range"] {
