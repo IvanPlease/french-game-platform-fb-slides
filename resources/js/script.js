@@ -25,6 +25,12 @@ $('input[type="range"]').each(function(){
     checkPercent($(this));
 });
 
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    $("body").css("background-color", "var(--color-hookers-green)");
+    $("body").css("color", "var(--color-gainsboro)");
+    $("body").html("<H1>Strona nie działa poprawnie na telefonach</h2>");
+}
+
 $(".background-picker").on("change", function(){
     $(".picture").css("background", "linear-gradient(-45deg, "+hexToHSL($(this).val(), 0)+" 0%, "+hexToHSL($(this).val(), 1)+" 50%, "+hexToHSL($(this).val(), 2)+" 100%)");
 });
