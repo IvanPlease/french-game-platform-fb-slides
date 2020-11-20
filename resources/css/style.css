@@ -15,6 +15,14 @@
 *{
     font-family: Museo300;
 }
+span.info{
+    position: absolute;
+    vertical-align: top;
+    top: 25%;
+    right: 10%;
+    font-size: 0.5rem;
+    cursor: pointer;
+}
 input[type="range"] {
     --thumbSize: 18px;
     --trackSize: 8px;
@@ -38,15 +46,20 @@ input[type="range"] {
     transform: translate(-50%,-50%);
     background: linear-gradient(-45deg, rgb(53, 56, 59) 0%, rgb(101, 106, 114) 50%, rgb(77, 81, 86) 100%);
 }
-h3.w-100::before{
+h3.w-100::before, .modal-header::before{
     content : "";
     position: absolute;
     left    : 50%;
-    bottom  : -15%;
     transform: translateX(-50%);
     height  : 1px;
     width   : 90%;  /* or 100px */
     border-bottom:1px solid var(--color-gainsboro);
+}
+h3.w-100::before{
+    bottom: -15%;
+}
+.modal-header::before{
+    bottom: 0;
 }
 .picture-back{
     height: 100%;
