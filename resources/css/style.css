@@ -75,7 +75,6 @@ h3.w-100::before{
     display: table-cell;
     vertical-align: middle;
     width: 100%;
-    color: #fff !important;
 }
 .picture>.picture-border>.text-inside-container>.text-inside:focus{
     outline: none;
