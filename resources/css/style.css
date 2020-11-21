@@ -23,6 +23,19 @@ span.info{
     font-size: 0.5rem;
     cursor: pointer;
 }
+span.badge-btn:last-child {
+    margin-right: 0px;
+}
+span.badge-btn {
+    padding: 5px 10px;
+    margin-right: 5px;
+    background-color: var(--color-gainsboro);
+    color: var(--color-onyx);
+}
+table{
+    border-collapse: separate;
+    border-spacing:0 1rem; 
+}
 input[type="range"] {
     --thumbSize: 18px;
     --trackSize: 8px;
