@@ -118,6 +118,7 @@ function checkPercent(e){
             $(this).css("border-width", e.val());
         });
         $("#bottom-text-border-container").css("margin-top", margin);
+        checkPercent($("#distanceFrom"));
     }
     e.css("--webkitProgressPercent", percent+"%");
 }
