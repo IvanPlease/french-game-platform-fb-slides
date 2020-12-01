@@ -15,6 +15,17 @@
 *{
     font-family: Museo300;
 }
+.picture[data-image=true]{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.option-back[data-visible=true]{
+    visibility: visible;
+}
+.option-back[data-visible=false]{
+    visibility: hidden;
+}
 span.info{
     position: absolute;
     vertical-align: top;

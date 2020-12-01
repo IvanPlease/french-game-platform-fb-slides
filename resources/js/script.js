@@ -27,10 +27,24 @@ $('input[type="range"]').each(function(){
 
 $(".info").on("click", function(){
     $("#infoModal").modal("show");
-})
+});
 
 $(".background-picker").on("change", function(){
-    $(".picture").css("background", "linear-gradient(-45deg, "+hexToHSL($(this).val(), 0)+" 0%, "+hexToHSL($(this).val(), 1)+" 50%, "+hexToHSL($(this).val(), 2)+" 100%)");
+    if($(this).hasClass("image-picker-plus-preview")){
+        var file = $(this).prop('files')[0];
+        var reader = new FileReader();
+        reader.onloadend = function(){
+            $(".picture").css("background-image", "url(" + reader.result + ")")
+                .attr("data-image", true);
+        }
+        if(file){
+            reader.readAsDataURL(file);
+        }
+    }
+    if($(this).hasClass("color-picker-plus-preview")){
+        $(".picture").css("background", "linear-gradient(-45deg, "+hexToHSL($(this).val(), 0)+" 0%, "+hexToHSL($(this).val(), 1)+" 50%, "+hexToHSL($(this).val(), 2)+" 100%)")
+            .attr("data-image", false);
+    }
 });
 $(".border-picker").on("change", function(){
     var color = $(this).val();
