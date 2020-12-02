@@ -24,6 +24,11 @@
     display: block;
     width: 100%;
     text-align: center;
+    user-select: none; /* standard syntax */
+    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
 }
 .option-back[data-visible=true]{
     display: flex;
@@ -139,6 +144,13 @@ input[type="range"]:focus {
 }
 .custom-file:hover>.custom-file-label::after{
     color: var(--color-spanish-gray);
+}
+.custom-control-label,.custom-control-label::before{
+    border-color: var(--color-hookers-green) !important; 
+    outline: none;
+}
+.custom-control-input:checked~.custom-control-label::before{
+    background-color: var(--color-onyx) !important;
 }
 .custom-file-label::after{
     color: var(--color-gainsboro);
