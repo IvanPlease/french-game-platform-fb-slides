@@ -85,29 +85,47 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="w-100" style="text-align: center;margin-top: 1rem;margin-bottom: 0;">Tło</p>
+                                    <p class="w-100" style="text-align: center;margin-top: 1rem;margin-bottom: 0;">Tło zdjęcia</p>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-2"></div>
-                                <div class="col-md-8">
-                                    <p style="text-align: center;margin-bottom: 0;">Kolor lub Zdjęcie</p>
+                            <div class="row" style="margin-top: .5rem;">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-10">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <span class="txt-span">Kolor</span>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="custom-control custom-switch" style="padding-left: 1.7rem;">
+                                                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                    <label class="custom-control-label" for="customSwitch1"></label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <span class="txt-span">Zdjęcie</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-md-2"></div>
+                                <div class="col-md-1"></div>
                             </div>
-                            <div class="row option-back" data-visible=false>
+                            <div class="row option-back" id="color-back" style="margin-top: .5rem;" data-visible=true>
                                 <div class="col-md-2"></div>
                                 <div class="col-md-8">
                                     <input type="color" value="#35393C" class="background-picker color-picker-plus-preview"/>
                                 </div>
                                 <div class="col-md-2"></div>
                             </div>
-                            <div class="row option-back" data-visible=true>
-                                <div class="col-md-2"></div>
-                                <div class="col-md-8">
-                                    <input type="file" value="#35393C" class="background-picker image-picker-plus-preview"/>
+                            <div class="row option-back" id="image-back" style="margin-top: .5rem;" data-visible=false>
+                                <div class="col-md-1"></div>
+                                <div class="col-md-10">
+                                    <div class="custom-file">
+                                        <input type="file" id="customFile" value="#35393C" class="background-picker image-picker-plus-preview custom-file-input"/>
+                                        <label class="custom-file-label" for="customFile">Choose file</label>
+                                      </div>
                                 </div>
-                                <div class="col-md-2"></div>
+                                <div class="col-md-1"></div>
                             </div>
                         </div>
                     </div>

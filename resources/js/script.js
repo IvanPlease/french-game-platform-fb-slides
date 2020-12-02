@@ -29,21 +29,23 @@ $(".info").on("click", function(){
     $("#infoModal").modal("show");
 });
 
+$("#customSwitch1").on("change", function(){
+    var colorBack = !($("#color-back").attr("data-visible") == 'true');
+    var imageBack = !($("#image-back").attr("data-visible") == 'true');
+    $("#color-back").attr("data-visible", colorBack);
+    $("#image-back").attr("data-visible", imageBack);
+    if(colorBack){
+        changeColor();
+    }else if(imageBack){
+        getFileFromInput();
+    }
+})
+
 $(".background-picker").on("change", function(){
     if($(this).hasClass("image-picker-plus-preview")){
-        var file = $(this).prop('files')[0];
-        var reader = new FileReader();
-        reader.onloadend = function(){
-            $(".picture").css("background-image", "url(" + reader.result + ")")
-                .attr("data-image", true);
-        }
-        if(file){
-            reader.readAsDataURL(file);
-        }
-    }
-    if($(this).hasClass("color-picker-plus-preview")){
-        $(".picture").css("background", "linear-gradient(-45deg, "+hexToHSL($(this).val(), 0)+" 0%, "+hexToHSL($(this).val(), 1)+" 50%, "+hexToHSL($(this).val(), 2)+" 100%)")
-            .attr("data-image", false);
+        getFileFromInput();
+    }else if($(this).hasClass("color-picker-plus-preview")){
+        changeColor();
     }
 });
 $(".border-picker").on("change", function(){
@@ -82,6 +84,25 @@ $(".text-inside").on("keydown", function(e) {
         map[e.keyCode] = false;
     }
 });
+
+function getFileFromInput(){
+    var file = $(".image-picker-plus-preview").prop('files')[0];
+    var reader = new FileReader();
+    reader.onloadend = function(){
+        $(".picture").css("background-image", "url(" + reader.result + ")")
+            .attr("data-image", true);
+        $("label[for=" + $(".image-picker-plus-preview").attr("id") + "]").text(file.name);
+    }
+    if(file){
+        reader.readAsDataURL(file);
+    }
+}
+
+function changeColor(){
+    var el = $(".background-picker.color-picker-plus-preview");
+    $(".picture").css("background", "linear-gradient(-45deg, "+hexToHSL(el.val(), 0)+" 0%, "+hexToHSL(el.val(), 1)+" 50%, "+hexToHSL(el.val(), 2)+" 100%)")
+        .attr("data-image", false);
+}
 
 function download(canvas, filename) {
     var lnk = document.createElement('a'), e;

@@ -16,15 +16,20 @@
     font-family: Museo300;
 }
 .picture[data-image=true]{
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+.txt-span{
+    display: block;
+    width: 100%;
+    text-align: center;
 }
 .option-back[data-visible=true]{
-    visibility: visible;
+    display: flex;
 }
 .option-back[data-visible=false]{
-    visibility: hidden;
+    display: none;
 }
 span.info{
     position: absolute;
@@ -129,10 +134,26 @@ input[type="range"] {
 input[type="range"]:focus {
     outline: none;
 }
+.custom-file>*{
+    cursor: pointer;
+}
+.custom-file:hover>.custom-file-label::after{
+    color: var(--color-spanish-gray);
+}
+.custom-file-label::after{
+    color: var(--color-gainsboro);
+    background-color: var(--color-onyx);
+    border-color: var(--color-hookers-green);
+    height: 38px !important;
+    top: -1px !important;
+}
+.custom-file-label{
+    height: 38px !important;
+    border-color: var(--color-hookers-green) !important;
+}
 .color-picker-plus-preview{
     padding: 0;
-    height: 30px;
-    border-radius: 8px;
+    height: 35px;
     border: none;
     background-color: transparent;
     outline: none;
