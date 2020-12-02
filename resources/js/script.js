@@ -65,9 +65,11 @@ $("#dwl-btn").on('click', function(){
         name = generateName(15);
     }
     $("#download_picture").toggleClass("picture-shadow");
-    html2canvas(document.querySelector("#download_picture")).then(canvas => {
-        download(canvas, name);
-    });
+    setTimeout(function(){
+        html2canvas(document.querySelector("#download_picture")).then(canvas => {
+            download(canvas, name);
+        });
+    }, 1000);
 });
 $(".text-inside").on("keydown", function(e) {
     if (e.keyCode in map) {
