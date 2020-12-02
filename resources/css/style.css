@@ -146,6 +146,7 @@ input[type="range"]:focus {
     border-color: var(--color-hookers-green);
     height: 38px !important;
     top: -1px !important;
+    content: "Prześlij" !important;
 }
 .custom-file-label{
     height: 38px !important;
