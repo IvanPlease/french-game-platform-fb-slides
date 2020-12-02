@@ -79,9 +79,6 @@ input[type="range"] {
     left: 50%;
     transform: translate(-50%,-50%);
     background: linear-gradient(-45deg, rgb(53, 56, 59) 0%, rgb(101, 106, 114) 50%, rgb(77, 81, 86) 100%);
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
 h3.w-100::before, .modal-header::before{
     content : "";
