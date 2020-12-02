@@ -64,6 +64,7 @@ $("#dwl-btn").on('click', function(){
     if(name == ""){
         name = generateName(15);
     }
+    $("#download_picture").toggleClass("picture-shadow");
     html2canvas(document.querySelector("#download_picture")).then(canvas => {
         download(canvas, name);
     });
